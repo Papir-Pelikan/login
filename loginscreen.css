@@ -1,0 +1,419 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #394E59 0%, #2a3a42 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            background-color: #FFFAEF;
+            width: 420px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(57, 78, 89, 0.1), transparent);
+            transform: rotate(45deg);
+            z-index: 1;
+        }
+
+        .card-header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #394E59 0%, #2a3a42 100%);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 3px solid #FFFAEF;
+        }
+
+        .logo i {
+            color: #FFFAEF;
+            font-size: 40px;
+        }
+
+        .card-header h1 {
+            color: #394E59;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .card-header p {
+            color: #394E59;
+            opacity: 0.8;
+            font-size: 16px;
+        }
+
+        .card-form {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 0;
+            top: 14px;
+            color: #394E59;
+            font-size: 18px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 0 12px 30px;
+            border: none;
+            background-color: transparent;
+            border-bottom: 2px solid #394E59;
+            outline: none;
+            color: #394E59;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(57, 78, 89, 0.6);
+        }
+
+        .input-group label {
+            position: absolute;
+            top: 12px;
+            left: 30px;
+            color: #394E59;
+            pointer-events: none;
+            transition: 0.3s ease all;
+        }
+
+        .input-group input:focus ~ label,
+        .input-group input:valid ~ label {
+            top: -20px;
+            left: 0;
+            font-size: 14px;
+            color: #394E59;
+            font-weight: 600;
+        }
+
+        .input-underline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background: linear-gradient(90deg, #394E59, #2a3a42);
+            transition: width 0.4s ease;
+        }
+
+        .input-group input:focus ~ .input-underline {
+            width: 100%;
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            color: #394E59;
+            cursor: pointer;
+        }
+
+        .remember input {
+            display: none;
+        }
+
+        .checkmark {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background-color: transparent;
+            border: 2px solid #394E59;
+            border-radius: 3px;
+            margin-right: 8px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .remember input:checked ~ .checkmark {
+            background-color: #394E59;
+        }
+
+        .remember input:checked ~ .checkmark:after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 0px;
+            width: 5px;
+            height: 10px;
+            border: solid #FFFAEF;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .forgot-link {
+            color: #394E59;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .forgot-link:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .login-btn {
+            background: linear-gradient(90deg, #394E59 0%, #2a3a42 100%);
+            color: #FFFAEF;
+            border: none;
+            padding: 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+            z-index: 1;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-btn span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #2a3a42 0%, #394E59 100%);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+            z-index: -1;
+            border-radius: 50px;
+        }
+
+        .login-btn:hover .btn-overlay {
+            transform: translateX(0);
+        }
+
+        .login-btn:active {
+            transform: scale(0.98);
+        }
+
+        .card-footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #394E59;
+            font-size: 14px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-footer a {
+            color: #394E59;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .card-footer a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .role-selector {
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .role-selector label {
+            display: block;
+            margin-bottom: 8px;
+            color: #394E59;
+            font-weight: 600;
+        }
+
+        .role-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .role-btn {
+            flex: 1;
+            padding: 10px;
+            background: transparent;
+            border: 2px solid #394E59;
+            border-radius: 8px;
+            color: #394E59;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .role-btn.active {
+            background: #394E59;
+            color: #FFFAEF;
+        }
+
+        .role-btn i {
+            margin-right: 5px;
+        }
+
+        .news-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .news-element {
+            position: absolute;
+            opacity: 0.7;
+        }
+
+        .news-1 {
+            top: 15%;
+            right: -30px;
+            font-size: 40px;
+            color: #FFFAEF;
+            transform: rotate(15deg);
+        }
+
+        .news-2 {
+            bottom: 20%;
+            left: -20px;
+            font-size: 35px;
+            color: #FFFAEF;
+            transform: rotate(-10deg);
+        }
+
+        .news-3 {
+            top: 40%;
+            right: 10%;
+            font-size: 30px;
+            color: #FFFAEF;
+            transform: rotate(5deg);
+        }
+
+        .static-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15;
+            background: #FFFAEF;
+        }
+
+        .shape-1 {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 20%;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            bottom: 15%;
+            right: 10%;
+        }
+
+        .shape-3 {
+            width: 70px;
+            height: 70px;
+            top: 50%;
+            left: 5%;
+        }
+
+        .shape-4 {
+            width: 120px;
+            height: 120px;
+            bottom: 25%;
+            left: 15%;
+        }
+
+        /* Responsive design */
+        @media (max-width: 480px) {
+            .login-card {
+                width: 90%;
+                padding: 30px;
+            }
+            
+            .remember-forgot {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .role-buttons {
+                flex-direction: column;
+            }
+        }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iskolaújság Szerkesztőség - Bejelentkezés</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="loginscreen.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <div class="card-header">
+                <img src="papirpelikanlogo.svg" alt="Iskola logó" class="school-logo" style="width: 300px; align-items: center;">
+                <p>Szerkesztőségi bejelentkezés</p>
+            </div>
+            <form class="card-form" method="POST" action="login.php">
+                <div class="role-selector">
+                    <label>Szerepkör:</label>
+                    <div class="role-buttons">
+                        <div class="role-btn active">
+                            <i class="fas fa-pencil-alt"></i> Szerkesztő / Fejlesztő
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i> <!-- Email ikon -->
+                    <input type="email" id="email" name="email" required> <!-- type="email" és name="email" -->
+                    <label for="email">Email-cím</label> <!-- label for="email" -->
+                    <div class="input-underline"></div>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-key"></i>
+                    <input type="password" id="password" name="password" required> <!-- name="password" -->
+                    <label for="password">Jelszó</label>
+                    <div class="input-underline"></div>
+                </div>
+                <div class="remember-forgot">
+                    <label class="remember">
+                        <input type="checkbox" name="remember">
+                        <span class="checkmark"></span>
+                        Emlékezz rám
+                    </label>
+                    <a href="#" class="forgot-link">Elfelejtetted a jelszót?</a>
+                </div>
+                <button type="submit" class="login-btn">
+                    <span>Bejelentkezés</span>
+                    <div class="btn-overlay"></div>
+                </button>
+            </form>
+            <div class="card-footer">
+                <p>Új szerkesztő? <a href="#">Kérj tőlünk bejelntkezőkulcsot!</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="loginscreen.js"></script>
+</body>
+</html>
